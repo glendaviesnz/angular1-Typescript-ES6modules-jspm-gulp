@@ -9,8 +9,13 @@ There are not a lot of examples yet of this combination, so putting here in case
 Clone the repo and then:
 
 npm install
+
 jspm install
+
 gulp
+
 or to bundle
+
 gulp deploy 
+
 (bundled version goes to build/production folder)

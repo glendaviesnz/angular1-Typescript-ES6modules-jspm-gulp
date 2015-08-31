@@ -5,3 +5,4 @@ build/
 coverage/
 karma_html/
 jspm_packages/
+.idea/

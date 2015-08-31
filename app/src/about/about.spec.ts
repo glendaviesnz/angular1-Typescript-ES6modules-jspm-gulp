@@ -1,10 +1,10 @@
 /// <reference path="../../../tools/typings/tsd.d.ts" />
 import {About} from './about-component';
-//import 'angular-mocks';
+// import 'angular-mocks';
 describe('About', function(){
 
     var about = new About();
-    /*beforeEach(angular.mockss.module('about', function ($provide) {
+    /* beforeEach(angular.mockss.module('about', function ($provide) {
         $provide.value('bob', function(){console.log('test');});
 
     }));
@@ -15,7 +15,7 @@ describe('About', function(){
           //  $scope: scope
         //});
 
-    }));*/
+    })); */
     it('Should add up', function(){
        expect(about.addUp(4, 5)).toBe(9);
     });

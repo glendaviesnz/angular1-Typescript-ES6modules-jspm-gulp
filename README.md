@@ -1,4 +1,4 @@
-# angular1-ES6-jspm-gulp
+# angular1 + Typescript + ES6 modules + jspm + gulp
 
 Don't panic - not yet another Angular seed project.
 

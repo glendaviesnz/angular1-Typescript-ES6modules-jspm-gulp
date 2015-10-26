@@ -4,6 +4,7 @@ var srcAssets         = 'app/assets';
 var vendor            = 'app/vendor';
 var build             = 'build';
 var development       = 'build/development';
+var coverage          = 'build/coverage';
 var production        = 'build/production';
 var developmentAssets = 'build/development/assets';
 var productionAssets  = 'build/production/assets';
@@ -16,37 +17,40 @@ module.exports = {
                 routes: {
                     "/" : "app",
                     "/jspm" : "jspm_packages",
+                    "/maps/": development + '/maps',
                     "/js": development + '/js',
                     "/assets/css": development + '/css'
                 }
             },
             port: 3000,
             files: [
-                development + '/css/**/*.css',
                 development  + '/js/**/*.js',
-                developmentAssets + '/images/**',
-                development + '/**/*.html'
+                developmentAssets + '/images/**'
             ]
         }
     },
     delete: {
-        development: [development],
-        production: [production],
+        development: development,
+        production: production,
+        coverage: coverage,
+        webstormFiles: ['!' + app + '/src/templates.js', app + '/src/**/*.js', app + '/src/**/*.js.map']
     },
 
     watch: {
         html: src + '/**/*.html',
         scripts: src + '/**/*.ts',
-        sass: app + '/**/*.scss'
+        sass: app + '/**/*.scss',
     },
-
+    app: app,
+    production: production,
     typescript: {
         development: {
             scripts: app + '/src/**/*.ts',
-            dest: development + '/js'
+            dest: development + '/js',
+            coverage: build + '/coverage/js'
         },
         production: {
-            scripts: src + '/**/*.ts',
+            scripts: app + '/src/**/*.ts',
             dest: production + '/js/src'
         }
     },
@@ -64,12 +68,21 @@ module.exports = {
 
     sass: {
         development: {
-            source: app + '/**/*.scss',
+            main: app + '/style/app.scss',
+            source: src + '/**/*.scss',
             dest: development + '/css'
         },
         production: {
+            main: app + '/style/app.scss',
             source: app + '/**/*.scss',
             dest: productionAssets + '/css'
+        }
+    },
+
+    images: {
+        production: {
+            source: app + '/assets/images/*.*',
+            dest: productionAssets + '/images'
         }
     }
 

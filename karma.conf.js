@@ -1,47 +1,31 @@
-'use strict';
+/* global module */
+module.exports = function (config) {
+    'use strict';
+    config.set({
+        autoWatch: true,
+        singleRun: false,
 
-module.exports = function(karma) {
-    karma.set({
-
-        frameworks: [ 'jspm', 'jasmine'],
+        frameworks: ['jspm', 'jasmine'],
 
         files: [
             'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js',
+            {pattern: 'app/assets/images/**/*.png', watched: false, included: false, served: true},
         ],
 
-        reporters: [ 'dots', 'html'],
-        preprocessors: {
-            './build/development/js/**/*.js': ['babel']
-        },
         jspm: {
-            config: './app/config/config-karma.js',
+            config: 'app/jspm-config/config-karma.js',
             loadFiles: [
-                'build/development/js/**/*.js'
+                'build/development/**/*.js'
             ]
         },
-        babelPreprocessor: {
-            options: { sourceMap:'inline', modules:'system' }
-        },
+
         browsers: ['PhantomJS'],
 
-        logLevel: 'LOG_DEBUG',
-
-        singleRun: false,
-        autoWatch: true,
-
-        coverageReporter: {
-            type : 'html',
-            dir : 'coverage/'
+        proxies:  {
+            '/assets/images/': '/base/app/assets/images/'
         },
+        reporters: ['dots'],
 
-        htmlReporter: {
-            outputDir: 'karma_html/',
-            focusOnFailures: true,
-            namedFiles: false,
-            pageTitle: null,
-            urlFriendlyName: false,
-            preserveDescribeNesting: true,
-            foldAll: false,
-        }
     });
+
 };

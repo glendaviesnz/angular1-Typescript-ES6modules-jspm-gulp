@@ -7,10 +7,14 @@ var runSequence = require('run-sequence');
 gulp.task('deploy', function(callback) {
     runSequence('delete-deploy',
         'typescript-deploy',
+        'typescript-dev',
+        'deploy-templates',
+        'production-jspm-config',
         'test-deploy',
         [
             'sass-deploy',
             'scripts-bundle',
+            'production-images'
 
         ],
         'delete-deploy-src',

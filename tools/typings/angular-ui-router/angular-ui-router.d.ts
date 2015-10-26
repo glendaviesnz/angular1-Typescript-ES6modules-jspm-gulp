@@ -264,7 +264,7 @@ declare module angular.ui {
     	 *
     	 * This method is useful when you need to use preventDefault() on the
     	 * $locationChangeSuccess event, perform some custom logic (route protection,
-    	 * auth, config, redirection, etc) and then finally proceed with the transition
+    	 * auth, jspm-config, redirection, etc) and then finally proceed with the transition
     	 * by calling $urlRouter.sync().
     	 *
     	 */

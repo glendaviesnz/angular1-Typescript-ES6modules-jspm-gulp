@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var conf = require('../../config').typescript.development;
+var conf = require('../../config').typescript.production;
 var typescript  = require('gulp-typescript');
 var sourcemaps  = require('gulp-sourcemaps');
 var tslint = require('gulp-tslint');

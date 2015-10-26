@@ -308,7 +308,7 @@ declare module angular {
          */
         config(inlineAnnotatedFunction: any[]): IModule;
         /**
-         * Register a constant service, such as a string, a number, an array, an object or a function, with the $injector. Unlike value it can be injected into a module configuration function (see config) and it cannot be overridden by an Angular decorator.
+         * Register a constant service, such as a string, a number, an array, an object or a function, with the $injector. Unlike value it can be injected into a module configuration function (see jspm-config) and it cannot be overridden by an Angular decorator.
          *
          * @param name The name of the constant.
          * @param value The constant value.
@@ -386,7 +386,7 @@ declare module angular {
         /**
          * Register a value service with the $injector, such as a string, a number, an array, an object or a function. This is short for registering a service where its provider's $get property is a factory function that takes no arguments and returns the value service.
 
-           Value services are similar to constant services, except that they cannot be injected into a module configuration function (see config) but they can be overridden by an Angular decorator.
+           Value services are similar to constant services, except that they cannot be injected into a module configuration function (see jspm-config) but they can be overridden by an Angular decorator.
          *
          * @param name The name of the instance.
          * @param value The value.
@@ -1699,7 +1699,7 @@ declare module angular {
             // implementation does not return anything.
             // constant(name: string, value: any): any;
             /**
-             * Register a constant service, such as a string, a number, an array, an object or a function, with the $injector. Unlike value it can be injected into a module configuration function (see config) and it cannot be overridden by an Angular decorator.
+             * Register a constant service, such as a string, a number, an array, an object or a function, with the $injector. Unlike value it can be injected into a module configuration function (see jspm-config) and it cannot be overridden by an Angular decorator.
              *
              * @param name The name of the constant.
              * @param value The constant value.

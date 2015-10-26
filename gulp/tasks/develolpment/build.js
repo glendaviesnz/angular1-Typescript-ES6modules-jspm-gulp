@@ -8,7 +8,8 @@ gulp.task('build', function(callback) {
     runSequence('delete',
         'typescript-dev',
         [
-            'sass',
+            'dev-templates',
+            'sass'
         ],
         callback);
 });
